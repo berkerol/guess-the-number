@@ -30,7 +30,7 @@ public class GuessTheNumber {
     private static final Random RANDOM = new Random();
     private static final int[] RESULTS = new int[6];
     private static final JCheckBox SUM_BOX = new JCheckBox("Sum", false);
-    private static final JTextArea TEXT_AREA = new JTextArea(20, 30);
+    private static final JTextArea TEXT_AREA = new JTextArea(20, 35);
     private static final JTextField TEXT_FIELD = new JTextField(6);
     private static final String TITLE = "GuessTheNumber";
     private static int digits;
