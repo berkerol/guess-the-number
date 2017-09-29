@@ -267,7 +267,7 @@ public class GuessTheNumber {
     private static void start() {
         Scanner input = null;
         try {
-            input = new Scanner(new File("GuessTheNumberConfiguration.ini"));
+            input = new Scanner(new File("GuessTheNumberConfiguration.ini"), "UTF-8");
         }
         catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex, TITLE, JOptionPane.ERROR_MESSAGE);
