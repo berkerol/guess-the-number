@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+  <title>Guess the Number</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" />
+  <link href="gtn.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <form class="form-inline form-offset">
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label for="lowerLimit">Lower Limit</label>
+          <input type="text" class="form-control" id="lowerLimit" size="5">
+        </div>
+        <div class="form-group col-xs-3">
+          <label for="upperLimit">Upper Limit</label>
+          <input type="text" class="form-control" id="upperLimit" size="5">
+        </div>
+        <div class="form-group col-xs-3">
+          <label for="guessLimit">Guess Limit</label>
+          <input type="text" class="form-control" id="guessLimit" size="5">
+        </div>
+      </div>
+    </form>
+    <form class="form-inline form-offset">
+      <div class="row">
+        <div class="checkbox col-xs-3">
+          <label for="positions">
+            <input type="checkbox" id="positions"> Positions
+          </label>
+        </div>
+        <div class="checkbox col-xs-3">
+          <label for="biggerSmaller">
+            <input type="checkbox" id="biggerSmaller"> Bigger Smaller
+          </label>
+        </div>
+        <div class="checkbox col-xs-3">
+          <label for="sumCheck">
+            <input type="checkbox" id="sumCheck"> Sum <span id ="sum"></span>
+          </label>
+        </div>
+      </div>
+    </form>
+    <form class="form-inline form-offset">
+      <div class="row">
+        <div class="form-group col-xs-3">
+          <label for="guess" id ="guessLabel">1. Guess</label>
+          <input type="text" class="form-control" id="guess" size="5" placeholder="Guess">
+        </div>
+        <div class="btn-group col-xs-6">
+          <a class="btn btn-success" onclick="if(!locked)guess()">Guess</a>
+          <a class="btn btn-warning" onclick="if(!locked)random()">Random</a>
+          <a class="btn btn-danger" onclick="if(!locked)giveUp()">Give Up</a>
+          <a class="btn btn-info" onclick="restart()">Restart</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 alert-offset" id="text">
+      </div>
+    </div>
+  </div>
+  <script src="gtn.js"></script>
+</body>
+
+</html>
