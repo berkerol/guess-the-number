@@ -78,7 +78,7 @@ function restart () {
   guesses = 1;
   oldGuesses = [];
   locked = false;
-  document.getElementById('guessLabel').innerHTML = '1. Guess';
+  document.getElementById('guessLabel').innerHTML = guesses + '. Guess';
   document.getElementById('text').innerHTML = '';
 }
 
@@ -114,14 +114,14 @@ function checkNumber (guess) {
     }
     if (guesses === guessLimit) {
       exit('alert alert-danger', 'Number was ' + number + '.');
-      return;
-    }
-    if (++guesses === guessLimit) {
-      document.getElementById('guessLabel').innerHTML = 'Last Guess';
     } else {
-      document.getElementById('guessLabel').innerHTML = guesses + '. Guess';
+      if (++guesses === guessLimit) {
+        document.getElementById('guessLabel').innerHTML = 'Last Guess';
+      } else {
+        document.getElementById('guessLabel').innerHTML = guesses + '. Guess';
+      }
+      write('alert alert-warning', text);
     }
-    write('alert alert-warning', text);
   }
 }
 

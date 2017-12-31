@@ -31,17 +31,17 @@
       <div class="row">
         <div class="checkbox col-xs-3">
           <label for="positions">
-            <input type="checkbox" id="positions"> Positions
+            <input type="checkbox" id="positions" accesskey="p"> <span style="text-decoration: underline">P</span>ositions
           </label>
         </div>
         <div class="checkbox col-xs-3">
           <label for="biggerSmaller">
-            <input type="checkbox" id="biggerSmaller"> Bigger Smaller
+            <input type="checkbox" id="biggerSmaller" accesskey="b"> <span style="text-decoration: underline">B</span>igger Smaller
           </label>
         </div>
         <div class="checkbox col-xs-3">
           <label for="sumCheck">
-            <input type="checkbox" id="sumCheck"> Sum <span id ="sum"></span>
+            <input type="checkbox" id="sumCheck" accesskey="s"> <span style="text-decoration: underline">S</span>um <span id ="sum"></span>
           </label>
         </div>
       </div>
@@ -52,11 +52,11 @@
           <label for="guess" id ="guessLabel">1. Guess</label>
           <input type="text" class="form-control" id="guess" size="5" placeholder="Guess">
         </div>
-        <div class="btn-group col-xs-6">
-          <a class="btn btn-success" onclick="if(!locked)guess()">Guess</a>
-          <a class="btn btn-warning" onclick="if(!locked)random()">Random</a>
-          <a class="btn btn-danger" onclick="if(!locked)giveUp()">Give Up</a>
-          <a class="btn btn-info" onclick="restart()">Restart</a>
+        <div class="btn-group col-xs-8">
+          <a class="btn btn-success" onclick="if(!locked)guess()" accesskey="g"><span class="glyphicon glyphicon-search"></span> <span style="text-decoration: underline">G</span>uess</a>
+          <a class="btn btn-warning" onclick="if(!locked)random()" accesskey="r"><span class="glyphicon glyphicon-random"></span> <span style="text-decoration: underline">R</span>andom</a>
+          <a class="btn btn-danger" onclick="if(!locked)giveUp()" accesskey="u"><span class="glyphicon glyphicon-remove"></span> Give <span style="text-decoration: underline">U</span>p</a>
+          <a class="btn btn-info" onclick="restart()" accesskey="e"><span class="glyphicon glyphicon-repeat"></span> R<span style="text-decoration: underline">e</span>start</a>
         </div>
       </div>
     </form>
