@@ -158,8 +158,8 @@ function exit (className, text) {
 
 function write (className, text) {
   let child = document.createElement('div');
-  child.className = className;
-  child.innerHTML = text;
+  child.className = className + ' alert-dismissible';
+  child.innerHTML = '<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>' + text;
   let parent = document.getElementById('text');
   parent.insertBefore(child, parent.firstChild);
 }
