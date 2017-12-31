@@ -13,15 +13,15 @@
   <div class="container">
     <form class="form-inline form-offset">
       <div class="row">
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
           <label for="lowerLimit">Lower Limit</label>
           <input type="text" class="form-control" id="lowerLimit" size="5">
         </div>
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-4 col-sm-4 col-md-3 col-lg-2">
           <label for="upperLimit">Upper Limit</label>
           <input type="text" class="form-control" id="upperLimit" size="5">
         </div>
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-4 col-sm-4 col-md-3 col-lg-2">
           <label for="guessLimit">Guess Limit</label>
           <input type="text" class="form-control" id="guessLimit" size="5">
         </div>
@@ -29,30 +29,24 @@
     </form>
     <form class="form-inline form-offset">
       <div class="row">
-        <div class="checkbox col-xs-3">
-          <label for="positions">
-            <input type="checkbox" id="positions" accesskey="p"> <span style="text-decoration: underline">P</span>ositions
-          </label>
+        <div class="checkbox col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3" style="margin-top:0px;">
+          <label for="positions"><input type="checkbox" id="positions" accesskey="p"> <span style="text-decoration: underline">P</span>ositions</label>
         </div>
-        <div class="checkbox col-xs-3">
-          <label for="biggerSmaller">
-            <input type="checkbox" id="biggerSmaller" accesskey="b"> <span style="text-decoration: underline">B</span>igger Smaller
-          </label>
+        <div class="checkbox col-xs-4 col-sm-4 col-md-3 col-lg-2">
+          <label for="biggerSmaller"><input type="checkbox" id="biggerSmaller" accesskey="b"> <span style="text-decoration: underline">B</span>igger Smaller</label>
         </div>
-        <div class="checkbox col-xs-3">
-          <label for="sumCheck">
-            <input type="checkbox" id="sumCheck" accesskey="s"> <span style="text-decoration: underline">S</span>um <span id ="sum"></span>
-          </label>
+        <div class="checkbox col-xs-4 col-sm-4 col-md-3 col-lg-2">
+          <label for="sumCheck"><input type="checkbox" id="sumCheck" accesskey="s"> <span style="text-decoration: underline">S</span>um <span id ="sum"></span></label>
         </div>
       </div>
     </form>
     <form class="form-inline form-offset">
       <div class="row">
-        <div class="form-group col-xs-3">
-          <label for="guess" id ="guessLabel">1. Guess</label>
+        <div class="form-group col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
+          <label for="guess" id="guessLabel">1. Guess</label>
           <input type="text" class="form-control" id="guess" size="5" placeholder="Guess">
         </div>
-        <div class="btn-group col-xs-8">
+        <div class="btn-group col-xs-8 col-sm-7 col-md-6 col-lg-5">
           <a class="btn btn-success" onclick="if(!locked)guess()" accesskey="g"><span class="glyphicon glyphicon-search"></span> <span style="text-decoration: underline">G</span>uess</a>
           <a class="btn btn-warning" onclick="if(!locked)random()" accesskey="r"><span class="glyphicon glyphicon-random"></span> <span style="text-decoration: underline">R</span>andom</a>
           <a class="btn btn-danger" onclick="if(!locked)giveUp()" accesskey="u"><span class="glyphicon glyphicon-remove"></span> Give <span style="text-decoration: underline">U</span>p</a>
@@ -63,7 +57,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 alert-offset" id="text">
+      <div class="col-xs-10 col-sm-8 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 alert-offset" id="text">
       </div>
     </div>
   </div>
