@@ -2,7 +2,7 @@
 
 Try to find the number using various hints within the guess limit. Digits cannot repeat. Written in [ES6](https://www.ecma-international.org/ecma-262/6.0/).
 
-[![button](play.png)](https://berkerol.github.io/guess-the-number/gtn.html)
+[![button](play.png)](gtn.html)
 
 ## Gameplay & Features
 
