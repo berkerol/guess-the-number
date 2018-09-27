@@ -41,7 +41,7 @@ function guess () {
     write('alert alert-danger', 'Wrong number of digits.');
   } else if (checkDigits(guess)) {
     write('alert alert-danger', 'Digists cannot repeat.');
-  } else if (oldGuesses.indexOf(guess) !== -1) {
+  } else if (oldGuesses.includes(guess)) {
     write('alert alert-danger', 'Already guessed before.');
   } else if (sumCheck && findDigitsSum(guess) !== sum) {
     write('alert alert-danger', 'Wrong sum of digits.');
@@ -54,7 +54,7 @@ function random () {
   let guess;
   do {
     guess = Math.floor(Math.random() * (upperLimit - lowerLimit + 1) + lowerLimit);
-  } while (checkDigits(guess) || oldGuesses.indexOf(guess) !== -1 || (sumCheck && findDigitsSum(guess) !== sum));
+  } while (checkDigits(guess) || oldGuesses.includes(guess) || (sumCheck && findDigitsSum(guess) !== sum));
   checkNumber(guess);
 }
 
