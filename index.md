@@ -1,6 +1,6 @@
 # Guess the Number
 
-Try to find the number using various hints within the guess limit. Digits cannot repeat. Written in [ES6](https://www.ecma-international.org/ecma-262/6.0/).
+Try to find the number using various hints within the guess limit. Digits cannot repeat.
 
 [![button](play.png)](gtn.html)
 
