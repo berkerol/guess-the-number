@@ -59,7 +59,7 @@ function random () {
 }
 
 function giveUp () {
-  exit('alert alert-danger', 'Number was ' + number + '.');
+  exit('alert alert-danger', `Number was ${number}.`);
 }
 
 function restart () {
@@ -103,7 +103,7 @@ function checkNumber (guess) {
           }
         }
       }
-      text += '<br>' + corrects + ' in correct position, ' + incorrects + ' in incorrect position, ' + (digits - corrects - incorrects) + ' no match.';
+      text += `<br>${corrects} in correct position, ${incorrects} in incorrect position, ${digits - corrects - incorrects} no match.`;
     }
     if (biggerSmaller) {
       if (guess > number) {
@@ -113,7 +113,7 @@ function checkNumber (guess) {
       }
     }
     if (guesses === guessLimit) {
-      exit('alert alert-danger', 'Number was ' + number + '.');
+      exit('alert alert-danger', `Number was ${number}.`);
     } else {
       if (++guesses === guessLimit) {
         document.getElementById('guessLabel').innerHTML = 'Last Guess';
