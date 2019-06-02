@@ -50,17 +50,17 @@ function guess () {
   }
 }
 
-function random () {
+window.random = function () {
   let guess;
   do {
     guess = Math.floor(Math.random() * (upperLimit - lowerLimit + 1) + lowerLimit);
-  } while (checkDigits(guess) || oldGuesses.includes(guess) || (sumCheck && findDigitsSum(guess) !== sum));
+  } while (checkDigits(guess) || oldGuesses.includes(guess) || (sumCheck && findDigitsSum(guess) !== sum)); // eslint-disable-line no-unmodified-loop-condition
   checkNumber(guess);
-}
+};
 
-function giveUp () {
+window.giveUp = function () {
   exit('alert alert-danger', `Number was ${number}.`);
-}
+};
 
 function restart () {
   lowerLimit = +document.getElementById('lowerLimit').value;
