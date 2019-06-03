@@ -9,3 +9,7 @@ body {
 .alert-offset {
   margin-top: 10px;
 }
+
+input[type="number"] {
+  width: 5em;
+}
