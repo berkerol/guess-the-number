@@ -1,9 +1,15 @@
-let lowerLimit = 100;
-let upperLimit = 999;
-let guessLimit = 10;
-let positions = true;
-let biggerSmaller = true;
-let sumCheck = false;
+const defaultLowerLimit = 100;
+const defaultUpperLimit = 999;
+const defaultGuessLimit = 10;
+const defaultPositions = true;
+const defaultBiggerSmaller = true;
+const defaultSumCheck = false;
+let lowerLimit = defaultLowerLimit;
+let upperLimit = defaultUpperLimit;
+let guessLimit = defaultGuessLimit;
+let positions = defaultPositions;
+let biggerSmaller = defaultBiggerSmaller;
+let sumCheck = defaultSumCheck;
 
 let number;
 let digits;
@@ -12,13 +18,8 @@ let guesses;
 let oldGuesses;
 let locked;
 
-document.addEventListener('keydown', keyDownHandler);
-document.getElementById('lowerLimit').value = lowerLimit;
-document.getElementById('upperLimit').value = upperLimit;
-document.getElementById('guessLimit').value = guessLimit;
-document.getElementById('positions').checked = positions;
-document.getElementById('biggerSmaller').checked = biggerSmaller;
-document.getElementById('sumCheck').checked = sumCheck;
+resetInputs();
+restart();
 document.getElementById('positions').addEventListener('change', function () {
   positions = this.checked;
 });
@@ -29,7 +30,17 @@ document.getElementById('sumCheck').addEventListener('change', function () {
   sumCheck = this.checked;
   updateSum();
 });
-restart();
+document.addEventListener('keydown', keyDownHandler);
+document.addEventListener('keyup', keyUpHandler);
+
+function resetInputs () {
+  document.getElementById('lowerLimit').value = lowerLimit;
+  document.getElementById('upperLimit').value = upperLimit;
+  document.getElementById('guessLimit').value = guessLimit;
+  document.getElementById('positions').checked = positions;
+  document.getElementById('biggerSmaller').checked = biggerSmaller;
+  document.getElementById('sumCheck').checked = sumCheck;
+}
 
 function guess () {
   const input = document.getElementById('guess');
@@ -168,5 +179,17 @@ function keyDownHandler (e) {
   if (e.keyCode === 13 && !locked) {
     e.preventDefault();
     guess();
+  }
+}
+
+function keyUpHandler (e) {
+  if (e.keyCode === 82) {
+    lowerLimit = defaultLowerLimit;
+    upperLimit = defaultUpperLimit;
+    guessLimit = defaultGuessLimit;
+    positions = defaultPositions;
+    biggerSmaller = defaultBiggerSmaller;
+    sumCheck = defaultSumCheck;
+    resetInputs();
   }
 }
