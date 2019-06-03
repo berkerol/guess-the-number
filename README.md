@@ -5,7 +5,7 @@
 [![ECMAScript](https://img.shields.io/badge/ECMAScript-latest-brightgreen.svg)](https://www.ecma-international.org/ecma-262)
 [![license](https://img.shields.io/badge/license-GNU%20GPL%20v3.0-blue.svg)](https://github.com/berkerol/guess-the-number/blob/master/LICENSE)
 
-Try to find the number using various hints within the guess limit. Digits cannot repeat.
+Try to find the number using various hints within the guess limit. Digits cannot repeat. Press _R_ to reset settings to defaults.
 
 [![button](play.png)](https://berkerol.github.io/guess-the-number/gtn.html)
 
