@@ -20,12 +20,6 @@ let locked;
 
 resetInputs();
 restart();
-document.getElementById('positions').addEventListener('change', function () {
-  positions = this.checked;
-});
-document.getElementById('biggerSmaller').addEventListener('change', function () {
-  biggerSmaller = this.checked;
-});
 document.getElementById('sumCheck').addEventListener('change', function () {
   sumCheck = this.checked;
   updateSum();
@@ -77,6 +71,8 @@ function restart () {
   lowerLimit = +document.getElementById('lowerLimit').value;
   upperLimit = +document.getElementById('upperLimit').value;
   guessLimit = +document.getElementById('guessLimit').value;
+  positions = document.getElementById('positions').checked;
+  biggerSmaller = document.getElementById('biggerSmaller').checked;
   if (guessLimit === 0) {
     guessLimit = Number.MAX_SAFE_INTEGER;
   }
