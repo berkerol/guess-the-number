@@ -165,7 +165,7 @@ function exit (className, text) {
 
 function write (className, text) {
   const child = document.createElement('div');
-  child.className = className + ' alert-dismissible';
+  child.className = className + ' alert-dismissible fade show';
   child.innerHTML = '<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>' + text;
   const parent = document.getElementById('text');
   parent.insertBefore(child, parent.firstChild);
