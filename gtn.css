@@ -2,14 +2,6 @@ body {
   background: #eee;
 }
 
-.form-offset {
-  margin-top: 20px;
-}
-
-.alert-offset {
-  margin-top: 10px;
-}
-
 input[type="number"] {
   width: 5em;
 }
