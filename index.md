@@ -1,6 +1,6 @@
 # Guess the Number
 
-Try to find the number using various hints within the guess limit. Digits cannot repeat. Press _R_ to reset settings to defaults.
+Try to find the number using various hints. Digits cannot repeat. Press _R_ to reset settings to defaults.
 
 [![button](play.png)](gtn.html)
 
