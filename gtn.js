@@ -1,3 +1,4 @@
+/* global createNumberRow createCheckboxRow createMenuRow write exit keyDownHandler keyUpHandler */
 const defaultLowerLimit = 100;
 const defaultUpperLimit = 999;
 const defaultGuessLimit = 10;
@@ -16,8 +17,22 @@ let digits;
 let sum;
 let guesses;
 let oldGuesses;
-let locked;
 
+window.locked = true;
+
+const form = document.getElementById('form');
+const rowClass = 'form-row justify-content-center';
+const colClass = 'form-group col col-md-3 col-lg-2';
+const numberClass = 'form-group col-3 col-md-2 col-xl-1';
+const buttonClass = 'col-9 col-md-7 col-lg-6 col-xl-5 my-auto';
+const firstRow = [['Lower Limit', 'lowerLimit', '1', '99999'], ['Upper Limit', 'upperLimit', '1', '99999'], ['Guess Limit', 'guessLimit', '1', '9999']];
+const secondRow = [['<u>P</u>ositions', 'positions', 'p'], ['<u>B</u>igger Smaller', 'biggerSmaller', 'b'], ['<u>S</u>um <span id="sum"></span>', 'sumCheck', 's']];
+const numberRow = ['1. Guess', 'guess', '1', '99999'];
+const buttonRow = [['success', 'if(!locked)window.guess()', 'g', 'search', '<u>G</u>uess'], ['primary', 'if(!locked)random()', 'r', 'random', '<u>R</u>andom'], ['danger', 'if(!locked)giveUp()', 'u', 'times', 'Give <u>U</u>p'], ['info', 'restart()', 'e', 'sync', 'R<u>e</u>start']];
+form.appendChild(createNumberRow(rowClass, colClass, firstRow));
+form.appendChild(createCheckboxRow(rowClass, colClass, secondRow));
+form.appendChild(createMenuRow(rowClass, numberClass, buttonClass, numberRow, buttonRow));
+const guessLabel = form.children[2].children[0].children[0];
 resetInputs();
 restart();
 document.getElementById('sumCheck').addEventListener('change', function () {
@@ -42,7 +57,7 @@ function resetInputs () {
   document.getElementById('sumCheck').checked = sumCheck;
 }
 
-function guess () {
+window.guess = function () {
   const input = document.getElementById('guess');
   const guess = parseInt(input.value);
   input.value = '';
@@ -59,7 +74,7 @@ function guess () {
   } else {
     checkNumber(guess);
   }
-}
+};
 
 window.random = function () {
   let guess;
@@ -90,8 +105,8 @@ function restart () {
   updateSum();
   guesses = 1;
   oldGuesses = [];
-  locked = false;
-  document.getElementById('guessLabel').innerHTML = guesses + '. Guess';
+  window.locked = false;
+  guessLabel.innerHTML = guesses + '. Guess';
   document.getElementById('text').innerHTML = '';
 }
 
@@ -129,9 +144,9 @@ function checkNumber (guess) {
       exit('alert alert-danger', `Number was ${number}.`);
     } else {
       if (++guesses === guessLimit) {
-        document.getElementById('guessLabel').innerHTML = 'Last Guess';
+        guessLabel.innerHTML = 'Last Guess';
       } else {
-        document.getElementById('guessLabel').innerHTML = guesses + '. Guess';
+        guessLabel.innerHTML = guesses + '. Guess';
       }
       write('alert alert-warning', text);
     }
@@ -160,32 +175,5 @@ function updateSum () {
     document.getElementById('sum').innerHTML = sum;
   } else {
     document.getElementById('sum').innerHTML = '';
-  }
-}
-
-function exit (className, text) {
-  write(className, text);
-  locked = true;
-  write('alert alert-info', 'Restart the game!');
-}
-
-function write (className, text) {
-  const child = document.createElement('div');
-  child.className = className + ' alert-dismissible fade show';
-  child.innerHTML = '<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>' + text;
-  const parent = document.getElementById('text');
-  parent.insertBefore(child, parent.firstChild);
-}
-
-function keyDownHandler (e) {
-  if (e.keyCode === 13 && !locked) {
-    e.preventDefault();
-    guess();
-  }
-}
-
-function keyUpHandler (e) {
-  if (e.keyCode === 82) {
-    resetInputs();
   }
 }
