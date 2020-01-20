@@ -4,12 +4,12 @@ const defaultGuessLimit = 10;
 const defaultPositions = true;
 const defaultBiggerSmaller = true;
 const defaultSumCheck = false;
-let lowerLimit = defaultLowerLimit;
-let upperLimit = defaultUpperLimit;
-let guessLimit = defaultGuessLimit;
-let positions = defaultPositions;
-let biggerSmaller = defaultBiggerSmaller;
-let sumCheck = defaultSumCheck;
+let lowerLimit;
+let upperLimit;
+let guessLimit;
+let positions;
+let biggerSmaller;
+let sumCheck;
 
 let number;
 let digits;
@@ -28,6 +28,12 @@ document.addEventListener('keydown', keyDownHandler);
 document.addEventListener('keyup', keyUpHandler);
 
 function resetInputs () {
+  lowerLimit = defaultLowerLimit;
+  upperLimit = defaultUpperLimit;
+  guessLimit = defaultGuessLimit;
+  positions = defaultPositions;
+  biggerSmaller = defaultBiggerSmaller;
+  sumCheck = defaultSumCheck;
   document.getElementById('lowerLimit').value = lowerLimit;
   document.getElementById('upperLimit').value = upperLimit;
   document.getElementById('guessLimit').value = guessLimit;
@@ -180,12 +186,6 @@ function keyDownHandler (e) {
 
 function keyUpHandler (e) {
   if (e.keyCode === 82) {
-    lowerLimit = defaultLowerLimit;
-    upperLimit = defaultUpperLimit;
-    guessLimit = defaultGuessLimit;
-    positions = defaultPositions;
-    biggerSmaller = defaultBiggerSmaller;
-    sumCheck = defaultSumCheck;
     resetInputs();
   }
 }
