@@ -1,4 +1,4 @@
-/* global createNumberRow createCheckboxRow createMenuRow write exit keyDownHandler keyUpHandler */
+/* global createNumberRow createCheckboxRow createMenuRow createAlert exit keyDownHandler keyUpHandler */
 const defaultLowerLimit = 100;
 const defaultUpperLimit = 999;
 const defaultGuessLimit = 10;
@@ -62,15 +62,15 @@ window.guess = function () {
   const guess = parseInt(input.value);
   input.value = '';
   if (isNaN(guess)) {
-    write('alert alert-danger', 'Not a number.');
+    createAlert('danger', 'Not a number.');
   } else if (findDigitsCount(guess) !== digits) {
-    write('alert alert-danger', 'Wrong number of digits.');
+    createAlert('danger', 'Wrong number of digits.');
   } else if (checkDigits(guess)) {
-    write('alert alert-danger', 'Digists cannot repeat.');
+    createAlert('danger', 'Digists cannot repeat.');
   } else if (oldGuesses.includes(guess)) {
-    write('alert alert-danger', 'Already guessed before.');
+    createAlert('danger', 'Already guessed before.');
   } else if (sumCheck && findDigitsSum(guess) !== sum) {
-    write('alert alert-danger', 'Wrong sum of digits.');
+    createAlert('danger', 'Wrong sum of digits.');
   } else {
     checkNumber(guess);
   }
@@ -85,7 +85,7 @@ window.random = function () {
 };
 
 window.giveUp = function () {
-  exit('alert alert-danger', `Number was ${number}.`);
+  exit('danger', `Number was ${number}.`);
 };
 
 function restart () {
@@ -113,7 +113,7 @@ function restart () {
 function checkNumber (guess) {
   oldGuesses.push(guess);
   if (number === guess) {
-    exit('alert alert-success', number + ' is correct.');
+    exit('success', number + ' is correct.');
   } else {
     let text = guess + ' is incorrect.';
     if (positions) {
@@ -141,14 +141,14 @@ function checkNumber (guess) {
       }
     }
     if (guesses === guessLimit) {
-      exit('alert alert-danger', `Number was ${number}.`);
+      exit('danger', `Number was ${number}.`);
     } else {
       if (++guesses === guessLimit) {
         guessLabel.innerHTML = 'Last Guess';
       } else {
         guessLabel.innerHTML = guesses + '. Guess';
       }
-      write('alert alert-warning', text);
+      createAlert('warning', text);
     }
   }
 }
