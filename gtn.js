@@ -21,9 +21,9 @@ let oldGuesses;
 window.locked = true;
 
 const form = document.getElementById('form');
-const rowClass = 'form-row justify-content-center';
-const colClass = 'form-group col col-md-3 col-lg-2';
-const numberClass = 'form-group col-3 col-md-2 col-xl-1';
+const rowClass = 'row justify-content-center';
+const colClass = 'col col-md-3 col-lg-2 mb-3';
+const numberClass = 'col-3 col-md-2 col-xl-1 mb-3';
 const buttonClass = 'col-9 col-md-7 col-lg-6 col-xl-5 my-auto';
 const firstRow = [['Lower Limit', 'lowerLimit', '1', '99999'], ['Upper Limit', 'upperLimit', '1', '99999'], ['Guess Limit', 'guessLimit', '1', '9999']];
 const secondRow = [['<u>P</u>ositions', 'positions', 'p'], ['<u>B</u>igger Smaller', 'biggerSmaller', 'b'], ['<u>S</u>um <span id="sum"></span>', 'sumCheck', 's']];
