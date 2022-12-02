@@ -1,4 +1,4 @@
-/* global createNumberRow createCheckboxRow createMenuRow createAlert exit keyDownHandler keyUpHandler */
+/* global createNumberCol createNumberRow createCheckboxRow createButtonGroupRow createRow createAlert exit keyDownHandler keyUpHandler */
 const defaultLowerLimit = 100;
 const defaultUpperLimit = 999;
 const defaultGuessLimit = 10;
@@ -31,7 +31,7 @@ const numberRow = ['1. Guess', 'guess', '1', '99999'];
 const buttonRow = [['success', 'if(!locked)window.guess()', 'g', 'search', '<u>G</u>uess'], ['primary', 'if(!locked)random()', 'r', 'random', '<u>R</u>andom'], ['danger', 'if(!locked)giveUp()', 'u', 'times', 'Give <u>U</u>p'], ['info', 'restart()', 'e', 'sync', 'R<u>e</u>start']];
 form.appendChild(createNumberRow(rowClass, colClass, firstRow));
 form.appendChild(createCheckboxRow(rowClass, colClass, secondRow));
-form.appendChild(createMenuRow(rowClass, numberClass, buttonClass, numberRow, buttonRow));
+form.appendChild(createRow(rowClass, [createNumberCol(numberClass, ...numberRow), createButtonGroupRow(buttonClass, 'btn-group', buttonRow)]));
 const guessLabel = form.children[2].children[0].children[0];
 resetInputs();
 restart();
